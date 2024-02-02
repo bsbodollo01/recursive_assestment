@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button id="calculateBtn">Calculate Factorial</button>
+    <p id="result"></p>
+
+    <script>
+        $(document).ready(function() {
+        function factorial(n) {
+            if (n === 0 || n === 1) {
+                return 1;
+            } else {
+                return n * factorial(n - 1);
+            }
+        }
+    
+        $('#calculateBtn').click(function() {
+            let number = $('#numberInput').val();
+            let result = factorial(number);
+            $('#result').text(`Factorial of ${number} is ${result}`);
+        });
+    });
+    </script>
+</body>
+</html>
